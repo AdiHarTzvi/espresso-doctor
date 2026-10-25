@@ -1,0 +1,56 @@
+{
+  "model": "gpt-5.6-luna",
+  "provider": "portkey",
+  "recorded_at": "2026-10-25T19:14:30-04:00",
+  "shot": {
+    "id": 3,
+    "created_at": "2026-10-25T23:14:25+00:00",
+    "dose_g": 18.0,
+    "yield_g": 37.0,
+    "time_s": 24.0,
+    "grind_setting": "12",
+    "taste": "sour",
+    "notes": "still sour",
+    "brew_ratio": 2.06
+  },
+  "ok": true,
+  "error": null,
+  "result": {
+    "diagnosis": "The shot is likely under-extracted: it tasted sour and ran in 24 seconds despite a roughly 1:2 ratio. The gradual improvement as the grind moved finer suggests more resistance and extraction may help, though sourness can also reflect coffee or puck-prep factors.",
+    "recommended_adjustment": {
+      "variable": "grind",
+      "action": "Grind 1 step finer; keep dose, yield, and other variables unchanged.",
+      "target": "18 g in -> 37 g out in about 27\u201330 s"
+    },
+    "explanation": "Your three recorded shots were sour, while time increased from 19 to 22 to 24 seconds as the grind setting moved from 14 to 13 to 12. The notes also changed from \u201cgushed, thin\u201d to \u201ca bit better,\u201d suggesting the finer direction is helping. Going one step finer should modestly increase resistance and contact time, which may improve extraction without changing several variables at once. The 1:2.06 ratio is within a common starting range, so grind is the clearest next test.",
+    "facts": [
+      "Current dose: 18.0 g.",
+      "Current yield: 37.0 g; calculated brew ratio: 1:2.06.",
+      "Current shot time: 24.0 s and taste: sour.",
+      "Previous shots were 19 s at 1:2.22 and 22 s at 1:2.11; both were also sour.",
+      "Recorded grind settings moved 14 \u2192 13 \u2192 12, with time increasing 19 \u2192 22 \u2192 24 s.",
+      "The previous notes described the first shot as \u201cgushed, thin\u201d and the second as \u201ca bit better.\u201d"
+    ],
+    "hypotheses": [
+      "The sourness is likely related to under-extraction from relatively short contact time.",
+      "Uneven puck preparation or channeling may also contribute.",
+      "Bean roast level, freshness, and water can affect sourness independently of grind."
+    ],
+    "confidence": "medium",
+    "uncertainty": "Only two previous shots are available, and the recorded grind-setting scale is unverified, so \u201cone step finer\u201d assumes lower settings mean finer grinding. Taste descriptions are subjective; if the next shot remains sour at the longer target time, the recommendation may need to change based on puck preparation, temperature, or coffee characteristics."
+  },
+  "tools_used": [
+    "calculate_brew_ratio",
+    "get_shot_history"
+  ],
+  "safety_flags": [],
+  "usage": {
+    "input_tokens": 2318,
+    "output_tokens": 567,
+    "cached_input_tokens": 0,
+    "requests": 2,
+    "tool_calls": 2
+  },
+  "approx_cost_usd": 0.001144,
+  "pricing_note": "Official OpenAI list prices for the model; actual course Portkey billing is unknown."
+}

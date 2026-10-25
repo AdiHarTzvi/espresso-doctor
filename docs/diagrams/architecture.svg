@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 540" role="img" aria-label="Espresso Doctor architecture: React UI, FastAPI backend, one PydanticAI agent with two tools, SQLite, Portkey gateway to gpt-5.6-luna" font-family="Inter, -apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f2d3a"/></marker>
+    <marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2a74ad"/></marker>
+  </defs>
+  <rect x="0" y="0" width="980" height="540" rx="18" fill="#f3f9fd"/>
+
+  <!-- Browser -->
+  <rect x="24" y="70" width="190" height="300" rx="14" fill="#fff" stroke="#c6e2f4" stroke-width="2"/>
+  <text x="119" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#1d5583">Browser</text>
+  <text x="119" y="117" text-anchor="middle" font-size="12" fill="#4a5b6b">React + Vite UI</text>
+  <g font-size="12" fill="#1f2d3a">
+    <rect x="40" y="134" width="158" height="30" rx="8" fill="#e3f1fa"/><text x="119" y="154" text-anchor="middle">Shot form</text>
+    <rect x="40" y="172" width="158" height="30" rx="8" fill="#fbf1d9"/><text x="119" y="192" text-anchor="middle">Diagnosis card</text>
+    <rect x="40" y="210" width="158" height="30" rx="8" fill="#e3f1fa"/><text x="119" y="230" text-anchor="middle">History table</text>
+    <rect x="40" y="248" width="158" height="30" rx="8" fill="#e3f1fa"/><text x="119" y="268" text-anchor="middle">Progress charts</text>
+    <rect x="40" y="286" width="158" height="30" rx="8" fill="#e3f1fa"/><text x="119" y="306" text-anchor="middle">Usage &amp; cost panel</text>
+  </g>
+  <text x="119" y="346" text-anchor="middle" font-size="11" fill="#6d7d8c">validates inputs before sending</text>
+
+  <!-- FastAPI -->
+  <rect x="252" y="70" width="210" height="300" rx="14" fill="#fff" stroke="#c6e2f4" stroke-width="2"/>
+  <text x="357" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#1d5583">FastAPI backend</text>
+  <text x="357" y="117" text-anchor="middle" font-size="12" fill="#4a5b6b">Python · /api/*</text>
+  <g font-size="12" fill="#1f2d3a">
+    <rect x="268" y="134" width="178" height="40" rx="8" fill="#e3f1fa"/><text x="357" y="151" text-anchor="middle">Input validation</text><text x="357" y="166" text-anchor="middle" font-size="10.5" fill="#4a5b6b">ranges · ratio · text limits → 422</text>
+    <rect x="268" y="182" width="178" height="40" rx="8" fill="#e3f1fa"/><text x="357" y="199" text-anchor="middle">Progress comparison</text><text x="357" y="214" text-anchor="middle" font-size="10.5" fill="#4a5b6b">deterministic, no AI</text>
+    <rect x="268" y="230" width="178" height="40" rx="8" fill="#fbf1d9"/><text x="357" y="247" text-anchor="middle">Usage &amp; cost logging</text><text x="357" y="262" text-anchor="middle" font-size="10.5" fill="#4a5b6b">tokens · requests · est. $</text>
+    <rect x="268" y="278" width="178" height="40" rx="8" fill="#e3f1fa"/><text x="357" y="295" text-anchor="middle">Error handling</text><text x="357" y="310" text-anchor="middle" font-size="10.5" fill="#4a5b6b">friendly 502 / 503, no secrets</text>
+  </g>
+  <text x="357" y="346" text-anchor="middle" font-size="11" fill="#6d7d8c">≤ 2 AI runs at a time</text>
+
+  <!-- Agent -->
+  <rect x="500" y="40" width="250" height="250" rx="14" fill="#fff" stroke="#e3b857" stroke-width="2.5"/>
+  <text x="625" y="68" text-anchor="middle" font-size="15" font-weight="700" fill="#5c3f0b">PydanticAI agent</text>
+  <text x="625" y="87" text-anchor="middle" font-size="12" fill="#4a5b6b">"Espresso Doctor" — one agent</text>
+  <g font-size="12" fill="#1f2d3a">
+    <rect x="516" y="102" width="218" height="40" rx="8" fill="#fbf1d9"/><text x="625" y="119" text-anchor="middle">Fixed instructions</text><text x="625" y="134" text-anchor="middle" font-size="10.5" fill="#4a5b6b">method · facts vs hypotheses · security rules</text>
+    <rect x="516" y="150" width="218" height="40" rx="8" fill="#fbf1d9"/><text x="625" y="167" text-anchor="middle">Structured output: Diagnosis</text><text x="625" y="182" text-anchor="middle" font-size="10.5" fill="#4a5b6b">ONE adjustment · confidence · uncertainty</text>
+    <rect x="516" y="198" width="218" height="40" rx="8" fill="#fbf1d9"/><text x="625" y="215" text-anchor="middle">Hard limits per run</text><text x="625" y="230" text-anchor="middle" font-size="10.5" fill="#4a5b6b">≤4 requests · ≤4 tool calls · ≤16k tokens</text>
+  </g>
+  <text x="625" y="268" text-anchor="middle" font-size="11" fill="#6d7d8c">+ guardrails: confidence cap, secret scrub</text>
+
+  <!-- Tools -->
+  <rect x="500" y="320" width="120" height="72" rx="12" fill="#2a74ad"/>
+  <text x="560" y="345" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Tool 1</text>
+  <text x="560" y="362" text-anchor="middle" font-size="11" fill="#fff">calculate_</text>
+  <text x="560" y="377" text-anchor="middle" font-size="11" fill="#fff">brew_ratio</text>
+  <rect x="630" y="320" width="120" height="72" rx="12" fill="#2a74ad"/>
+  <text x="690" y="345" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Tool 2</text>
+  <text x="690" y="362" text-anchor="middle" font-size="11" fill="#fff">get_shot_</text>
+  <text x="690" y="377" text-anchor="middle" font-size="11" fill="#fff">history</text>
+  <text x="625" y="410" text-anchor="middle" font-size="10.5" fill="#4a5b6b">args bounded · injection-like notes withheld</text>
+
+  <!-- SQLite -->
+  <ellipse cx="460" cy="462" rx="92" ry="14" fill="#fbf1d9" stroke="#b07a1e" stroke-width="1.5"/>
+  <rect x="368" y="462" width="184" height="46" fill="#fbf1d9" stroke="none"/>
+  <path d="M368,462 v46 a92,14 0 0 0 184,0 v-46" fill="#fbf1d9" stroke="#b07a1e" stroke-width="1.5"/>
+  <text x="460" y="490" text-anchor="middle" font-size="13" font-weight="700" fill="#5c3f0b">SQLite</text>
+  <text x="460" y="506" text-anchor="middle" font-size="10.5" fill="#5c3f0b">shots · diagnoses + usage</text>
+
+  <!-- Gateway + model -->
+  <rect x="790" y="70" width="170" height="96" rx="14" fill="#fff" stroke="#c6e2f4" stroke-width="2"/>
+  <text x="875" y="98" text-anchor="middle" font-size="14" font-weight="700" fill="#1d5583">Portkey gateway</text>
+  <text x="875" y="117" text-anchor="middle" font-size="11" fill="#4a5b6b">api.portkey.ai/v1</text>
+  <text x="875" y="134" text-anchor="middle" font-size="11" fill="#4a5b6b">Responses API · cache</text>
+  <text x="875" y="151" text-anchor="middle" font-size="10.5" fill="#6d7d8c">PORTKEY_API_KEY</text>
+  <rect x="790" y="196" width="170" height="96" rx="14" fill="#1f2d3a"/>
+  <text x="875" y="226" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">gpt-5.6-luna</text>
+  <text x="875" y="245" text-anchor="middle" font-size="11" fill="#c6e2f4">on Azure OpenAI</text>
+  <text x="875" y="262" text-anchor="middle" font-size="11" fill="#f3dfae">+ provider content filter</text>
+  <rect x="790" y="330" width="170" height="62" rx="14" fill="#fff" stroke="#b9c8d4" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="875" y="356" text-anchor="middle" font-size="12" font-weight="700" fill="#4a5b6b">Fallback: OpenAI API</text>
+  <text x="875" y="374" text-anchor="middle" font-size="10.5" fill="#6d7d8c">OPENAI_API_KEY · gpt-5-mini</text>
+
+  <!-- arrows -->
+  <g stroke="#1f2d3a" stroke-width="1.6" fill="none">
+    <path d="M214,200 H250" marker-end="url(#arr)"/>
+    <path d="M462,165 H498" marker-end="url(#arr)"/>
+    <path d="M750,118 H788" marker-end="url(#arr)"/>
+    <path d="M875,166 V194" marker-end="url(#arr)"/>
+    <path d="M750,262 C770,300 780,330 788,350" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+    <path d="M357,370 V446" marker-end="url(#arr)"/>
+  </g>
+  <g stroke="#2a74ad" stroke-width="1.8" fill="none">
+    <path d="M560,290 V318" marker-end="url(#arrb)"/>
+    <path d="M690,290 V318" marker-end="url(#arrb)"/>
+    <path d="M690,392 C690,440 620,470 554,476" marker-end="url(#arrb)"/>
+  </g>
+  <g font-size="10.5" fill="#4a5b6b">
+    <text x="232" y="192" text-anchor="middle">JSON</text>
+    <text x="480" y="157" text-anchor="middle">run</text>
+    <text x="769" y="110" text-anchor="middle">HTTPS</text>
+    <text x="372" y="420">store &amp; log</text>
+    <text x="702" y="432">read previous shots</text>
+  </g>
+
+  <text x="24" y="38" font-size="18" font-weight="700" fill="#1f2d3a">Espresso Doctor — architecture</text>
+  <text x="24" y="530" font-size="11" fill="#6d7d8c">One agent, two tools. Everything runs locally except the model call.</text>
+</svg>

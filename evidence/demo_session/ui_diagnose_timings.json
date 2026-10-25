@@ -1,0 +1,95 @@
+{
+  "description": "Measured in a real headless Chrome session against the real backend + Portkey gpt-5.6-luna. Wall clock = from clicking 'Save & diagnose' to receiving the /diagnose response.",
+  "recorded_at": "2026-10-25T19:21:31-0400",
+  "runs": [
+    {
+      "label": "shot1_sour_20s_no_history",
+      "http_status": 200,
+      "ok": true,
+      "wall_clock_seconds_click_to_response": 5.94,
+      "usage": {
+        "model": "gpt-5.6-luna via portkey",
+        "input_tokens": 2186,
+        "output_tokens": 429,
+        "cached_input_tokens": 0,
+        "requests": 2,
+        "tool_calls": 2,
+        "cost_usd": 0.000952
+      },
+      "tools_used": [
+        "get_shot_history",
+        "calculate_brew_ratio"
+      ],
+      "safety_flags": []
+    },
+    {
+      "label": "shot2_sour_25s_history1",
+      "http_status": 200,
+      "ok": true,
+      "wall_clock_seconds_click_to_response": 5.38,
+      "usage": {
+        "model": "gpt-5.6-luna via portkey",
+        "input_tokens": 2302,
+        "output_tokens": 502,
+        "cached_input_tokens": 0,
+        "requests": 2,
+        "tool_calls": 2,
+        "cost_usd": 0.001063
+      },
+      "tools_used": [
+        "get_shot_history",
+        "calculate_brew_ratio"
+      ],
+      "safety_flags": []
+    },
+    {
+      "label": "shot3_balanced_29s_history2",
+      "http_status": 200,
+      "ok": true,
+      "wall_clock_seconds_click_to_response": 5.43,
+      "usage": {
+        "model": "gpt-5.6-luna via portkey",
+        "input_tokens": 2456,
+        "output_tokens": 525,
+        "cached_input_tokens": 0,
+        "requests": 2,
+        "tool_calls": 2,
+        "cost_usd": 0.001121
+      },
+      "tools_used": [
+        "calculate_brew_ratio",
+        "get_shot_history"
+      ],
+      "safety_flags": []
+    },
+    {
+      "label": "shot4_bitter_38s_prompt_injection",
+      "http_status": 200,
+      "ok": true,
+      "wall_clock_seconds_click_to_response": 7.08,
+      "usage": {
+        "model": "gpt-5.6-luna via portkey",
+        "input_tokens": 2538,
+        "output_tokens": 567,
+        "cached_input_tokens": 0,
+        "requests": 2,
+        "tool_calls": 2,
+        "cost_usd": 0.001188
+      },
+      "tools_used": [
+        "calculate_brew_ratio",
+        "get_shot_history"
+      ],
+      "safety_flags": [
+        "notes_look_like_instructions",
+        "provider_filter_blocked_notes_retried_without_them"
+      ]
+    }
+  ],
+  "server_side_validation_check": {
+    "status": 422,
+    "body": {
+      "detail": "dose_g: Input should be less than or equal to 30; time_s: Input should be greater than or equal to 5"
+    }
+  }
+}

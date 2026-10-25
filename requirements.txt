@@ -1,0 +1,9 @@
+# Python dependencies (backend, AI agent, tests). Tested with Python 3.14.
+# Install:  python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+pydantic-ai-slim[openai]==2.56.0
+fastapi==0.143.1
+uvicorn[standard]==0.54.0
+python-dotenv==1.2.4
+# tests
+pytest==9.1.1
+httpx==0.28.1

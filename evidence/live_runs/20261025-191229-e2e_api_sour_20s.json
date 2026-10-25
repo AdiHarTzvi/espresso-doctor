@@ -1,0 +1,73 @@
+{
+  "description": "Real end-to-end run: POST /api/shots then POST /api/shots/{id}/diagnose against the running FastAPI backend (fresh scratch database, no history).",
+  "recorded_at": "2026-10-25T19:12:29-04:00",
+  "connection": "Portkey gateway https://api.portkey.ai/v1, OpenAI Responses API",
+  "input_shot": {
+    "dose_g": 18,
+    "yield_g": 36,
+    "time_s": 20,
+    "grind_setting": "12",
+    "taste": "sour"
+  },
+  "http_status": 200,
+  "response": {
+    "id": 1,
+    "shot_id": 1,
+    "ok": true,
+    "result": {
+      "diagnosis": "The sour taste is consistent with likely under-extraction: the shot reached a 1:2 ratio but flowed relatively quickly at 20 seconds. With no previous shots available, this is a tentative diagnosis rather than a confirmed trend.",
+      "recommended_adjustment": {
+        "variable": "grind",
+        "action": "Grind slightly finer; keep dose, yield, and puck preparation unchanged.",
+        "target": "18 g in -> 36 g out in roughly 25–30 s"
+      },
+      "explanation": "A finer grind should increase resistance and contact time, which may extract more and reduce sourness while preserving the current 1:2 recipe. The 25–30 second range is only a starting point, not a rule; judge the result primarily by taste. Keeping dose and yield constant makes the effect of the grind change easier to interpret.",
+      "facts": [
+        "Dose was 18.0 g.",
+        "Yield was 36.0 g, a 1:2.00 brew ratio.",
+        "The shot time was 20.0 s.",
+        "The recorded taste was sour.",
+        "No previous shots were returned, so there is no history-based trend to compare."
+      ],
+      "hypotheses": [
+        "The relatively short time may have contributed to under-extraction.",
+        "Uneven puck preparation, bean freshness, roast level, water, or temperature may also contribute to sourness."
+      ],
+      "confidence": "low",
+      "uncertainty": "There is no shot history and no additional information about roast, freshness, temperature, or puck preparation. If a slightly finer grind makes the shot harsh or bitter, the recommendation would need to be reassessed."
+    },
+    "error": null,
+    "safety_flags": [],
+    "tools_used": [
+      "calculate_brew_ratio",
+      "get_shot_history"
+    ],
+    "usage": {
+      "model": "gpt-5.6-luna via portkey",
+      "input_tokens": 2162,
+      "output_tokens": 417,
+      "cached_input_tokens": 0,
+      "requests": 2,
+      "tool_calls": 2,
+      "cost_usd": 0.000933
+    }
+  },
+  "usage_log_row_from_sqlite": {
+    "id": 1,
+    "shot_id": 1,
+    "created_at": "2026-10-25T23:12:17+00:00",
+    "status": "ok",
+    "model": "gpt-5.6-luna via portkey",
+    "input_tokens": 2162,
+    "output_tokens": 417,
+    "requests": 2,
+    "tool_calls": 2,
+    "cost_usd": 0.000933,
+    "tools_used": [
+      "calculate_brew_ratio",
+      "get_shot_history"
+    ],
+    "error": null
+  },
+  "pricing_note": "cost_usd uses official OpenAI list prices for gpt-5.6-luna (/bin/zsh.20 in / /bin/zsh.02 cached / .20 out per 1M tokens). Actual course Portkey billing is unknown."
+}
