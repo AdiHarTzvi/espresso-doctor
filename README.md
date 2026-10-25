@@ -20,7 +20,7 @@ Built for the Yale SOM *AI Agents* course final project.
 Requirements: **Python 3.11+** and **Node.js 20+** (developed with Python 3.14 and Node 24).
 
 ```bash
-git clone <this-repo-url> espresso-doctor
+git clone https://github.com/AdiHarTzvi/espresso-doctor.git espresso-doctor
 cd espresso-doctor
 
 # 1. Python backend

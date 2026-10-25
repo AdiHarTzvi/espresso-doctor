@@ -33,12 +33,9 @@ Deadline: **26 Oct 2026, 6:00 PM ET.** Checked on 25 Oct 2026.
 
 ## Remaining issues / to do before submitting
 
-1. **Publish the GitHub repository** (not done, as requested). Then:
-   - replace "GitHub link to be added at submission" on the cover of `docs/report.src.html`, and the
-     `<this-repo-url>` in README's clone command;
-   - run `.venv/bin/python scripts/build_docs.py` to rebuild `report.html` and `slides.html`.
-2. **Make the first git commit.** The repository is initialized but has **no commits yet**. Check
-   `git status` first: `.env`, `data/`, `.venv/` and `node_modules/` are ignored.
+1. ✅ **Published:** https://github.com/AdiHarTzvi/espresso-doctor (public). The repository URL is in the README clone command, on the report
+   cover and on the last slide; `report.html` and `slides.html` were rebuilt.
+2. ✅ **Committed and pushed** to `main`. `.env`, `data/`, `.venv/`, `node_modules/` and `.claude/` are ignored.
 3. **The direct-OpenAI fallback has not been tested live.** Only the Portkey path was exercised with real calls,
    because there is no `OPENAI_API_KEY` on this machine. Offline tests cover the fallback's settings logic only.
 4. **Page count checked in Chrome only.** Safari or Firefox may paginate slightly differently. 13 pages leaves
